@@ -23,6 +23,7 @@ public class Student
 
     public void enrollToCourse( Course course )
     {
+           courses.add(course); //simply adding the course to the course array.
         //TODO implement this method
     }
 
@@ -31,10 +32,17 @@ public class Student
         approvedCourses.put( course.getCode(), course );
     }
 
-
+    // returns true if this student is attending the course specified by the argument courseCode
+    // boolean isAttendingCourse = new Boolean;  // original attempt
     public boolean isAttendingCourse( String courseCode )
+
     {
         //TODO implement this method
+        for (Course c : courses){
+            if (c.getCode().equals(courseCode)) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -50,3 +58,6 @@ public class Student
         return "Student {" + super.toString() + "}";
     }
 }
+
+
+// I can understand all of this I just get so lost as soon as it comes time to actually code it. I need more time.
